@@ -5,9 +5,15 @@ import com.nani454.features.util.EmployeeUtil;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ExploringLamda {
     public static void main(String[] args) {
+        //Create a stream of integers that are powers of 2 and less than 2048
+        Stream<Integer> twoPowerStream = Stream.iterate(2, integer->integer<2048 ,integer->integer*2);
+        //Create a stream of integers from 1 to 1000
+        Stream<Integer> integerStream = Stream.iterate(1, integer->integer<1000 ,integer->integer+1);
+
         List<Employee> empList = EmployeeUtil.createEmployeeList();
         EmployeeUtil.printEmployeeList(empList);
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++");
