@@ -1,4 +1,4 @@
-package com.nani454.features;
+package com.nani454.challenges;
 
 public class EvenOddThreads {
     public static void main(String[] args) {
