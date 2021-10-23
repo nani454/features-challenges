@@ -1,4 +1,4 @@
-package com.nani454.challenges;
+package com.nani454.challenges.leetcode;
 
 public class _P4_Median_Of_Two_Sorted_Arrays {
     public static void main(String[] args) {
