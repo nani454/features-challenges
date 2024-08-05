@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class _P38_Count_And_Say {
     public static void main(String[] args) {
-        System.out.println(new _P38_Count_And_Say().rle("3322251"));
+        System.out.println(new _P38_Count_And_Say().countAndSay(4));
     }
     public String countAndSay(int n) {
         if(n == 1){
