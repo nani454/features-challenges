@@ -2,8 +2,7 @@ package com.nani454.challenges.leetcode;
 
 public class _P43_Multiply_Strings {
     public static void main(String[] args) {
-        //System.out.println(new _P43_Multiply_Strings().multiply("123456789", "987654321"));
-        System.out.println(new _P43_Multiply_Strings().sum("98","9"));
+        System.out.println(new _P43_Multiply_Strings().multiply("123456789", "987654321"));
     }
 
     public String sum(String num1, String num2) {
