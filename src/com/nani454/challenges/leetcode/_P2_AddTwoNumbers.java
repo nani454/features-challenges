@@ -11,17 +11,17 @@ public class _P2_AddTwoNumbers {
         ListNode result = _p2.addTwoNumbers(l1, l2);
 
         System.out.print("[");
-        while(true){
+        while (true) {
             System.out.print(result.val);
-            if(result.next != null) {
+            if (result.next != null) {
                 result = result.next;
                 System.out.print(" ,");
-            }
-            else
+            } else
                 break;
         }
         System.out.print("]");
     }
+
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         BigInteger _num1 = getReversedNumber(l1);
         BigInteger _num2 = getReversedNumber(l2);
@@ -31,34 +31,34 @@ public class _P2_AddTwoNumbers {
         return formReversedResult(_sum);
     }
 
-    public BigInteger getReversedNumber(ListNode l){
+    public BigInteger getReversedNumber(ListNode l) {
         Stack<Integer> digits = new Stack<>();
 
-        while(true){
+        while (true) {
             digits.push(l.val);
 
-            if(l.next != null)
+            if (l.next != null)
                 l = l.next;
             else
                 break;
 
         }
         BigInteger result = BigInteger.ZERO;
-        while(digits.size()>0){
+        while (digits.size() > 0) {
             result = result.multiply(BigInteger.TEN);
-            result = result.add(new BigInteger(""+digits.pop()));
+            result = result.add(new BigInteger("" + digits.pop()));
         }
         return result;
     }
 
-    public ListNode formReversedResult(BigInteger num){
+    public ListNode formReversedResult(BigInteger num) {
         ListNode firstNode = new ListNode();
         firstNode.val = num.mod(BigInteger.TEN).intValue();
         num = num.divide(BigInteger.TEN);
         firstNode.next = null;
         ListNode latestNode = firstNode;
 
-        while(num.compareTo(BigInteger.ZERO) > 0){
+        while (num.compareTo(BigInteger.ZERO) > 0) {
             ListNode _newNode = new ListNode();
             _newNode.val = num.mod(BigInteger.TEN).intValue();
             num = num.divide(BigInteger.TEN);
@@ -71,10 +71,20 @@ public class _P2_AddTwoNumbers {
 
     }
 }
+
 class ListNode {
     int val;
     ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
 }

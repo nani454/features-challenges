@@ -6,16 +6,18 @@ public class Employee {
     private int salary;
     private String dept;
 
-    public Employee(int empId, String empName, int salary, String dept){
+    public Employee(int empId, String empName, int salary, String dept) {
         this();
         this.empId = empId;
         this.empName = empName;
         this.salary = salary;
         this.dept = dept;
     }
-    public Employee(){
+
+    public Employee() {
         super();
     }
+
     public int getEmpId() {
         return empId;
     }

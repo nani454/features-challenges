@@ -22,6 +22,7 @@ public class EvenOddThreads {
         oddThread.start();
     }
 }
+
 class Printer {
     final int n;
     int counter = 1;
@@ -31,7 +32,7 @@ class Printer {
     }
 
     public void printEvenNumbers(int n) {
-        synchronized(this) {
+        synchronized (this) {
             while (counter < n) {
                 while (counter % 2 != 0) {
                     try {

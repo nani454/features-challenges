@@ -9,7 +9,8 @@ public class _P17_Letter_Combinations_Of_a_Phone_Number {
 
 
     Map<Character, char[]> digitCharMap = new HashMap<>();
-    public _P17_Letter_Combinations_Of_a_Phone_Number(){
+
+    public _P17_Letter_Combinations_Of_a_Phone_Number() {
         digitCharMap.put('2', new char[]{'a', 'b', 'c'});
         digitCharMap.put('3', new char[]{'d', 'e', 'f'});
         digitCharMap.put('4', new char[]{'g', 'h', 'i'});
@@ -23,19 +24,18 @@ public class _P17_Letter_Combinations_Of_a_Phone_Number {
     public static void main(String[] args) {
         System.out.println(new _P17_Letter_Combinations_Of_a_Phone_Number().letterCombinations(""));
     }
+
     public List<String> letterCombinations(String digits) {
         List<String> letterCombinations = new ArrayList<>();
-        if(digits.length()==0){
+        if (digits.length() == 0) {
             return letterCombinations;
-        }
-        else if(digits.length()==1){
+        } else if (digits.length() == 1) {
             char[] letters = digitCharMap.get(digits.charAt(0));
-            for(char c:letters){
-                letterCombinations.add(""+c);
+            for (char c : letters) {
+                letterCombinations.add("" + c);
             }
             return letterCombinations;
-        }
-        else {
+        } else {
 
             List<String> subStringLetterCombinations = letterCombinations(digits.substring(1));
 

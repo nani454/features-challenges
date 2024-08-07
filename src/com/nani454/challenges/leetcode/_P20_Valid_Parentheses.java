@@ -6,21 +6,20 @@ public class _P20_Valid_Parentheses {
     public static void main(String[] args) {
         new _P20_Valid_Parentheses().isValid("(])");
     }
+
     public boolean isValid(String s) {
 
         Stack<Character> parenthesesStack = new Stack<>();
 
-        for (Character parentheses: s.toCharArray()) {
-            if(parentheses.equals('(') ||
+        for (Character parentheses : s.toCharArray()) {
+            if (parentheses.equals('(') ||
                     parentheses.equals('[') ||
-                    parentheses.equals('{')){
+                    parentheses.equals('{')) {
                 parenthesesStack.push(parentheses);
-            }
-            else{
-                if(parenthesesStack.isEmpty()){
+            } else {
+                if (parenthesesStack.isEmpty()) {
                     parenthesesStack.push(parentheses);
-                }
-                else {
+                } else {
                     Character peekOfparenthesesStack = parenthesesStack.peek();
                     if (parentheses.equals(')') && peekOfparenthesesStack.equals('(')) {
                         parenthesesStack.pop();
@@ -28,14 +27,14 @@ public class _P20_Valid_Parentheses {
                         parenthesesStack.pop();
                     } else if (parentheses.equals('}') && peekOfparenthesesStack.equals('{')) {
                         parenthesesStack.pop();
-                    }else{
+                    } else {
                         parenthesesStack.push(parentheses);
                     }
                 }
             }
         }
 
-        if(parenthesesStack.isEmpty())
+        if (parenthesesStack.isEmpty())
             return true;
         else
             return false;
